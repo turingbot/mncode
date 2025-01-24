@@ -1,0 +1,470 @@
+    <!DOCTYPE html>
+    <html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Free-Internet ReCoder</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/91998494?s=32" type="image/ico" />
+        <style>h1,h2,h3,summary{text-align:center}.button,.footer,td div{display:flex}.button,button.button:hover,th{color:#fff}#apply,label{display:block}.rtl{direction:rtl}:root{--color:black;--primary-color:#09639f;--secondary-color:#3498db;--header-color:#09639f;--background-color:#fff;--form-background-color:#f9f9f9;--table-active-color:#f2f2f2;--hr-text-color:#3b3b3b;--lable-text-color:#333;--border-color:#ddd;--button-color:#09639f;--input-background-color:white;--header-shadow:2px 2px 4px rgba(0, 0, 0, 0.25)}body{font-family:system-ui,Tahoma;background-color:var(--background-color);color:var(--color)}body.dark-mode{--color:white;--primary-color:#09639F;--secondary-color:#3498DB;--header-color:#3498DB;--background-color:#121212;--form-background-color:#121212;--table-active-color:#252525;--hr-text-color:#D5D5D5;--lable-text-color:#DFDFDF;--border-color:#353535;--button-color:#3498DB;--input-background-color:#252525;--header-shadow:2px 2px 4px rgba(255, 255, 255, 0.25)}.material-symbols-outlined{margin-left:5px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}details{border-bottom:1px solid var(--border-color)}summary{font-weight:700;cursor:pointer;text-wrap:nowrap}summary::marker{font-size:1.5rem;color:var(--secondary-color)}.form-control button,input.button{font-size:1.1rem;font-weight:600}summary h2{display:inline-flex}h1{font-size:2.5em;color:var(--header-color);text-shadow:var(--header-shadow)}h2,h3{margin:30px 0;color:var(--hr-text-color)}hr{border:1px solid var(--border-color);margin:20px 0}.footer{font-weight:600;margin:10px auto 0;justify-content:center;align-items:center}.footer button{margin:0 20px;background:#212121;max-width:fit-content}.footer button:focus,.footer button:hover{background:#3b3b3b}.form-control a,a.link{text-decoration:none}.form-control{margin-bottom:20px;font-family:Arial,sans-serif;display:flex;flex-direction:column}.form-control button{background-color:var(--form-background-color);color:var(--button-color);border-color:var(--primary-color);border:1px solid;margin-top:10px;width:98%}.form-control input[type=password],input[type=checkbox]{background-color:var(--input-background-color)}#apply{margin-top:20px}label{margin-bottom:5px;font-size:110%;font-weight:600;color:var(--lable-text-color)}input[type=number],input[type=text],input[type=url],select,textarea{width:100%;text-align:left;padding:10px;border:1px solid var(--border-color);border-radius:5px;font-size:16px;color:var(--lable-text-color);background-color:var(--input-background-color);box-sizing:border-box;transition:border-color .3s}.form-control input[type=password]:focus,input[type=number]:focus,input[type=text]:focus,input[type=url]:focus,select:focus,textarea:focus{border-color:var(--secondary-color);outline:0}.button{align-items:left;justify-content:center;width:100%;white-space:nowrap;padding:10px 15px;font-size:16px;font-weight:600;letter-spacing:1px;border:none;border-radius:5px;background-color:var(--primary-color);cursor:pointer;outline:0;box-shadow:0 5px 10px rgba(0,0,0,.2);transition:.3s}.close,th{font-weight:700}.form-container,table{border:1px solid var(--border-color)}#maincode:focus{height:20rem}style="margin: 0;                 grid-column: 2;" table button{margin:auto;width:auto}.button.disabled,.button[disabled]{background-color:#ccc;cursor:not-allowed;box-shadow:none;pointer-events:none}.button:hover,table button:focus,table button:hover{background-color:#2980b9;box-shadow:0 8px 15px rgba(0,0,0,.3);transform:translateY(-2px)}.floating-button:hover,.header-container button:hover,body.dark-mode .floating-button:hover{transform:scale(1.1)}.button:active,table button:active{transform:translateY(1px);box-shadow:0 3px 7px rgba(0,0,0,.3)}.form-container{max-width:90%;margin:0 auto 100px;padding:20px;background:var(--form-background-color);border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,.1)}.table-container{margin-top:20px;overflow-x:auto}table{width:100%;border-collapse:separate;border-spacing:0;border-radius:10px;margin-bottom:20px;overflow:hidden}td,th{padding:10px;border-bottom:1px solid var(--border-color)}td div{align-items:center}th{background-color:var(--secondary-color);font-size:1.1rem;width:50%}#ips td:first-child,td:last-child,tr:hover{background-color:var(--table-active-color)}.close{color:var(--color);float:right;font-size:28px}.close:focus,.close:hover{color:#000;text-decoration:none;cursor:pointer}.form-control label{display:block;margin-bottom:8px;font-size:110%;font-weight:600;color:var(--lable-text-color);line-height:1.3em}.form-control input[type=password]{width:100%;padding:10px;border:1px solid var(--border-color);border-radius:5px;font-size:16px;color:var(--lable-text-color);box-sizing:border-box;margin-bottom:15px;transition:border-color .3s}.floating-button,body.dark-mode .floating-button{background-color:var(--color)}.routing{display:grid;justify-content:flex-start;grid-template-columns:1fr 1fr 10fr 1fr;margin-bottom:15px}.form-control .routing input{grid-column:2/3}#routing-rules.form-control{display:grid;grid-template-columns:1fr 1fr}.routing label{text-align:left;margin:0 0 0 10px;font-weight:400;font-size:100%;text-wrap:nowrap}#passwordError{color:red;margin-bottom:10px}.symbol{margin-right:8px}.floating-button{position:fixed;bottom:20px;left:20px;color:#fff;border:none;border-radius:50%;width:60px;height:60px;font-size:24px;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,.2);transition:background-color .3s,transform .3s}.input-with-select,.min-max{width:100%}.min-max{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline}.min-max span{text-align:center;white-space:pre}#ips th{background-color:var(--hr-text-color);color:var(--background-color);width:unset}#ips td{background-color:unset}.header-container{display:flex;align-items:center;justify-content:center}@media only screen and (min-width:768px){.form-container{max-width:70%}.form-control{margin-bottom:15px;display:grid;grid-template-columns:1fr 1fr;align-items:baseline;justify-content:flex-end;font-family:Arial,sans-serif}#apply{display:block;margin:20px auto 0;max-width:50%}.modal-content{width:30%}.routing{display:grid;grid-template-columns:4fr 1fr 3fr 4fr}}.rtl,.ltr{font-family:'B Titr',Tahoma}a{cursor:pointer}.form-control.rtl,.form-control.ltr,.note{display:block;color:#f80}.errorBox,.form-control.errorBox{display:none;color:red!important;font-size:large;text-align:center}
+        </style>
+    </head>
+    <body>
+        <h1>ReCoding Free-Internet 🐉</h1>
+        <div class="form-container">
+            <h2>Source Code:</h2>
+            <div class="table-container">
+                <textarea id="maincode" onchange="CheckPrVrsion()"></textarea>
+            </div>
+
+
+            <div class="form-control ltr">
+                Get Project Source Code: &nbsp;&nbsp;
+                    <a href="https://github.com/liMilCo/Free-Internet" target="_blank">Free Internet</a>
+			</div>
+            <div class="form-control">
+            	<button type="button" class="button" onclick="SetPrCode('https://raw.githubusercontent.com/liMilCo/Free-Internet/main/_worker.js')">AutoLoad</button>
+
+
+            </div>
+        </div>
+        <div class="form-container">
+
+            <div class="form-control ltr">
+             * The words you choose should not be repetitive.
+            </div>
+		<hr />
+            <form id="configForm">
+            	<!--- ////////////////////////////  URL  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+                <details open>
+
+
+                    <summary><h2>Access URLs</h2></summary>
+                    <div class="form-control">
+                        <label for="UUID" style="display:grid;grid-template-columns: 1fr 1fr;align-items: baseline;">Default UUID:
+                            <button id="genUUID" type="button" class="button" onclick="GetUUID('UUID')" style="padding: 6px 15px;">Generate ♻️</button>
+                        </label>
+                        <input type="text" id="UUID" name="bpbdata" value="" pattern="[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" title="AutoGnrte">
+                        <input type="hidden" id="_UUID" value="12345678-1111-1234-1234-1234567890ab">
+                    </div>
+                    <div class="form-control ltr">
+                    * You can set it on Cloudflare > Variables.
+                    </div>
+                </details>
+                <!--- ////////////////////////////  URL  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+                <details>
+
+
+                    <summary><h2>Access URLs</h2></summary>
+                    <div class="form-control">
+                        <label id="lblpanel" for="panel">/UUID<br><i style="font-size:smaller;">Access to [Advanced Config Generator]</i></label>
+                        <input type="text" id="panel" name="bpbdata" value="" pattern="[a-z]{3,}$" title="English lower case letters only">
+                        <input type="hidden" id="_panel" value="${AccessAdvancedConfig}">
+                    </div>
+                    <div class="form-control ltr">
+                    * If you change this remember it.
+                    </div>
+                    <div class="form-control">
+                        <label id="lblsub" for="sub">/sub/UUID</label>
+                        <input type="text" id="sub" name="bpbdata" value="" pattern="[a-z]{3,}$" title="English lower case letters only">
+                        <input type="hidden" id="_sub" value="_AccessSubscription_">
+                    </div>
+                </details>
+
+                <!--- ////////////////////////////  Variables  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+                <details>
+                    <summary><h2>(Variables and Secrets) On Cloudflare</h2></summary>
+                    <div class="form-control">
+                        <label for="envuuid">UUID</label>
+                        <input type="text" id="envuuid" name="bpbdata" value="" placeholder="MyKey" pattern="[a-zA-Z]{2,}$" title="English letters only">
+                        <input type="hidden" id="_envuuid" value="env.UUID">
+                    </div>
+                    <div class="form-control">
+                        <label for="envproxyip">PROXYIP</label>
+                        <input type="text" id="envproxyip" name="bpbdata" value="" placeholder="PxIP" pattern="[a-zA-Z]{2,}$" title="English letters only">
+                        <input type="hidden" id="_envproxyip" value="env.PROXYIP">
+                    </div>
+                    <div class="form-control ltr">
+                      * Note that you must use exactly these words to import the variable to cloudflare
+                    </div>
+                </details>
+                <!--- ////////////////////////////  Functions \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+                <details open>
+                    <summary><h2>Functions</h2></summary>
+                    <div class="form-control">
+                        <label for="vlessOverWSHandler">vlessOverWSHandler() <a title="Generate Random Functions Name" class="random" onclick="setRandom('vlessOverWSHandler')">🎁</a></label>
+                        <input type="text" id="vlessOverWSHandler" name="bpbdata" value="" pattern="[a-zA-Z]{5,}$" required>
+                        <input type="hidden" id="_vlessOverWSHandler" value="vOWSHandler">
+                    </div>
+                    <div class="form-control">
+                        <label for="handleTCPOutBound">handleTCPOutBound() <a title="Generate Random Functions Name" class="random" onclick="setRandom('handleTCPOutBound')">🎁</a></label>
+                        <input type="text" id="handleTCPOutBound" name="bpbdata" value="" pattern="[a-zA-Z]{5,}$" required>
+                        <input type="hidden" id="_handleTCPOutBound" value="hTOBound">
+                    </div>
+                    <div class="form-control">
+                        <label for="makeReadableWebSocketStream">makeReadableWebSocketStream() <a title="Generate Random Functions Name" class="random" onclick="setRandom('makeReadableWebSocketStream')">🎁</a></label>
+                        <input type="text" id="makeReadableWebSocketStream" name="bpbdata" value="" pattern="[a-zA-Z]{5,}$" required>
+                        <input type="hidden" id="_makeReadableWebSocketStream" value="mkRdWSktStrm">
+                    </div>
+                    <div class="form-control">
+                        <label for="processVlessHeader">processVlessHeader() <a title="Generate Random Functions Name" class="random" onclick="setRandom('processVlessHeader')">🎁</a></label>
+                        <input type="text" id="processVlessHeader" name="bpbdata" value="" pattern="[a-zA-Z]{5,}$" required>
+                        <input type="hidden" id="_processVlessHeader" value="prssVvHeader">
+                    </div>
+                    <div class="form-control">
+                        <label for="vlessRemoteSocketToWS">vlessRemoteSocketToWS() <a title="Generate Random Functions Name" class="random" onclick="setRandom('vlessRemoteSocketToWS')">🎁</a></label>
+                        <input type="text" id="vlessRemoteSocketToWS" name="bpbdata" value="" pattern="[a-zA-Z]{5,}$" required>
+                        <input type="hidden" id="_vlessRemoteSocketToWS" value="rmtSkt2WS">
+                    </div>
+                    <div class="form-control">
+                        <label for="handleUDPOutBound">handleUDPOutBound() <a title="Generate Random Functions Name" class="random" onclick="setRandom('handleUDPOutBound')">🎁</a></label>
+                        <input type="text" id="handleUDPOutBound" name="bpbdata" value="" pattern="[a-zA-Z]{5,}$" required>
+                        <input type="hidden" id="_handleUDPOutBound" value="hUOBnd">
+                    </div>
+                 </details>
+
+        </div>
+        <div class="form-container">
+                <div id="apply" class="form-control">
+                    <div style="grid-column: 2; width: 100%; display: inline-flex;">
+                        <input type="submit" id="applyButton" style="margin-right: 10px;" class="button" value="ReCode 🐉" form="configForm" onclick="">
+                        <button id="applyCopyButton" type="button" style="margin-right: 10px;" class="button" onclick="CopyNewCode('gencode')" disabled>Copy</button>
+                        <button id="applyDnldButton" type="button" class="button" onclick="SendFile('gencode')" disabled>Download</button>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <h2>ReCoded Project</h2>
+            <div class="table-container">
+                <textarea id="gencode" style="height: 20rem;"></textarea>
+            </div>
+            <hr>
+            <hr>
+
+
+            <div id="apply" class="form-control">
+                    <div style="grid-column: 2; width: 100%; display: inline-flex;">
+                        <input type="submit" id="obfButton" style="margin-right: 10px;" class="button" value="Obfuscator 💨" onclick="ObfuscationNewCode()" disabled>
+                        <button id="obfCopyButton" type="button" style="margin-right: 10px;" class="button" onclick="CopyNewCode('obfcode')" disabled>Copy</button>
+                        <button id="obfDnldButton" type="button" class="button" onclick="SendFile('obfcode')" disabled>Download</button>
+
+                    </div>
+             </div>
+            <h2>Obfuscated codes:</h2>
+            <div class=" form-control ltr" style="display: none;">
+                 <label for="renameObf"> splitStringsObf
+                  <input type="checkbox" id="renameObf" onchange="renGlobObf()">  </label>
+            </div>
+            <div class="table-container">
+                <textarea id="obfcode" style="height: 20rem;"></textarea>
+            </div>
+            <hr>
+
+            <div class="footer">
+
+                <a class="link" href="https://github.com/liMilCo/Free-Internet" style="color: var(--color);" target="_blank">
+                     <i class="fa fa-github" style="font-size:36px; margin-right: 10px;vertical-align:middle;"></i>
+                     Free Internet</a>
+
+
+            </div>
+        </div>
+        <button id="darkModeToggle" class="floating-button">
+            <i id="modeIcon" class="fa fa-2x fa-adjust" style="color: var(--background-color);" aria-hidden="true"></i>
+        </button>
+    <script src="https://cdn.jsdelivr.net/npm/javascript-obfuscator/dist/index.browser.js"></script>
+    <script>
+        localStorage.getItem('darkMode') === 'enabled' && document.body.classList.add('dark-mode');
+        let inputsSave = ["UUID", "panel","sub","envuuid","envproxyip"];
+
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const configForm = document.getElementById('configForm');
+
+        const inputsData = document.getElementsByName('bpbdata');
+        const SrcCode  = document.getElementById('maincode');
+        const GenCode  = document.getElementById('gencode');
+        const obfButton  = document.getElementById('obfButton');
+        const applyCopyButton  = document.getElementById('applyCopyButton');
+        const applyDnldButton  = document.getElementById('applyDnldButton');
+
+
+        const obfCode  = document.getElementById('obfcode');
+        const obfCopyButton  = document.getElementById('obfCopyButton');
+        const obfDnldButton  = document.getElementById('obfDnldButton');
+        const HomePage  = document.getElementById('homePage');
+
+        document.addEventListener('DOMContentLoaded', async () => {
+
+
+            darkModeToggle.addEventListener('click', () => {
+                const isDarkMode = document.body.classList.toggle('dark-mode');
+                localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            });
+            for (const inputSave of inputsSave) {
+            	     const inputSaveEl = document.getElementById(inputSave);
+            	     inputSaveEl.value = localStorage.getItem(inputSave);
+            }
+
+
+
+        });
+       configForm.addEventListener('submit', (event) => applySettings());
+
+
+
+        const copyToClipboard = (text) => {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('📋 New Codes Copied to clipboard');
+        }
+
+        const applySettings = async () => {
+            event.preventDefault();
+            event.stopPropagation();
+
+                var TheCode = SrcCode.value;
+                if(!TheCode){alert("Please insert BPB Original Code.");SrcCode.focus();return false;}
+                if(IsDuplicates(inputsData) != ''){alert("The word ["+IsDuplicates(inputsData)+"] used more than once!");return false;}
+
+        	    for (const inData of inputsData) {
+        	        const SrchData  = document.getElementById('_'+inData.id);
+        	        var SrchPrfx;
+        	        if(SrchData.value.startsWith("env.")){SrchPrfx = "env."}else if(SrchData.value.startsWith("/")){SrchPrfx = "/"}else{SrchPrfx = ""}
+        	    	//alert(SrchData.value +" = "+ inData.value +" - "+inData.id+" + "+SrchPrfx);
+        	    	if(inData.value){
+	        	    	TheCode = TheCode.replaceAll(SrchData.value, SrchPrfx + inData.value);
+        	    	}
+                    if(inputsSave.includes(inData.id)){localStorage.setItem(inData.id, inData.value);}
+        	    }
+
+
+                TheCode = AdvChng(TheCode);
+
+                applyCopyButton.disabled = false;
+                applyDnldButton.disabled = false;
+                obfButton.disabled = false;
+
+                GenCode.value = TheCode;
+                return;
+
+        }
+
+        const AdvChng  = (mTheCode) => {
+
+         	 return mTheCode;
+        }
+         var replaceUUID = "UUID";
+         const GetUUID  = (id) => {
+              var newUUID = crypto.randomUUID();
+              document.getElementById(id).value = newUUID;
+
+              document.getElementById('lblpanel').innerHTML = document.getElementById('lblpanel').innerHTML.replaceAll(replaceUUID, newUUID);
+              document.getElementById('lblsub').innerHTML = document.getElementById('lblsub').innerHTML.replaceAll(replaceUUID, newUUID);
+              replaceUUID = newUUID;
+        }
+
+
+        var splitStringsObf = false;
+
+        const renGlobObf  = () => {
+        	 if(document.getElementById('renameObf').checked){
+        	 	     splitStringsObf = true;
+        	 }else{
+        	 	     splitStringsObf = false;
+        	 }
+        }
+
+        const ObfuscationNewCode = async () => {
+
+                var TheCode = GenCode.value;
+                if(TheCode == ''){alert("First Generate New Code!");return false;}
+
+                    document.body.style.cursor = 'wait';
+                    const obfButtonVal = obfButton.value;
+                    obfButton.value = '⌛ Loading...';
+
+                //var JavaScriptObfuscator = require('javascript-obfuscator');
+                var obfuscationResult = await JavaScriptObfuscator.obfuscate(TheCode,
+                    {
+    					"compact": true,
+    					"config": "",
+    					"controlFlowFlattening": false,
+    					"controlFlowFlatteningThreshold": 0.75,
+    					"debugProtection": false,
+    					"debugProtectionInterval": 0,
+    					"disableConsoleOutput": false,
+    					"domainLock": [],
+    					"domainLockRedirectUrl": "about:blank",
+    					"exclude": [],
+    					"forceTransformStrings": [],
+    					"identifierNamesCache": null,
+    					"identifierNamesGenerator": "hexadecimal",
+    					"identifiersPrefix": "",
+    					"identifiersDictionary": [],
+    					"ignoreImports": false,
+    					"inputFileName": "",
+    					"log": false,
+    					"numbersToExpressions": false,
+    					"optionsPreset": "default",
+    					"renameProperties": false,
+    					"renamePropertiesMode": "safe",
+    					"reservedNames": [],
+    					"reservedStrings": [],
+    					"stringArrayRotate": true,
+    					"seed": 0,
+    					"selfDefending": false,
+    					"stringArrayShuffle": true,
+    					"simplify": true,
+    					"sourceMap": false,
+    					"sourceMapBaseUrl": "",
+    					"sourceMapFileName": "",
+    					"sourceMapMode": "separate",
+    					"sourceMapSourcesMode": "sources-content",
+    					"stringArray": true,
+    					"stringArrayCallsTransform": false,
+    					"stringArrayCallsTransformThreshold": 0.5,
+    					"stringArrayEncoding": [
+    					    					"none"
+    					],
+    					"stringArrayIndexesType": [
+    					    					"hexadecimal-number"
+    					],
+    					"stringArrayIndexShift": true,
+    					"stringArrayWrappersChainedCalls": true,
+    					"stringArrayWrappersCount": 1,
+    					"stringArrayWrappersParametersMaxCount": 2,
+    					"stringArrayWrappersType": "variable",
+    					"stringArrayThreshold": 0.75,
+    					"unicodeEscapeSequence": false,
+    					"deadCodeInjection": false,
+    					"deadCodeInjectionThreshold": 0.4,
+    					"renameGlobals": false,
+    					"splitStrings": splitStringsObf,
+    					"splitStringsChunkLength": 2,
+    					"transformObjectKeys": false,
+    					"target": "node"
+                    }
+                );
+
+
+                obfCopyButton.disabled = false;
+                obfDnldButton.disabled = false;
+                obfCode.value =  obfuscationResult.getObfuscatedCode();
+
+                document.body.style.cursor = 'default';
+                obfButton.value = obfButtonVal;
+
+                return;
+        }
+
+
+        const CopyNewCode = (id) => {
+        	 const CopyNewCodeEl  = document.getElementById(id);
+        	 if(CopyNewCodeEl.value){copyToClipboard(CopyNewCodeEl.value);}
+        }
+
+        const setRandom = (id) => {
+        	 const setRandomEl = document.getElementById(id);
+        	 if(!setRandomEl.value){setRandomEl.value = generateRandom();}
+        }
+
+             function generateRandom() {
+                const charset =
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+                let password = '';
+                const randomValues = new Uint8Array(16);
+                crypto.getRandomValues(randomValues);
+
+                for (let i = 0; i < 10; i++) {
+                    password += charset[randomValues[i] % charset.length];
+                }
+                return password;
+            }
+ 		let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) !== index)
+        const IsDuplicates = (obj) => {
+        	 var arr = [];
+        	 var i = 0;
+        	 for (const inObj of obj) { if(inObj.value){arr[i] = inObj.value; i++;}}
+             return findDuplicates(arr);
+        }
+        const SendFile = (id) => {
+        	 const MyCode  = document.getElementById(id);
+        	 if(MyCode.value){downloadCode("_worker.js",MyCode.value);}
+        }
+function downloadCode(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+function GetPrVrsion(InInt) {
+	var PrVersion = 0;
+         if(SrcCode.value){
+         var versionMatch = SrcCode.value.match(/ThisVersion\s*=\s*[\"\'](.*?)[\"\']/);
+         	if (versionMatch && versionMatch[1]) {
+         	     PrVersion = versionMatch[1];
+         	}
+         }
+         if(InInt){
+            PrVersion = versionMatch[1].split(".")[0]+"."+versionMatch[1].split(".")[1]+versionMatch[1].split(".")[2];
+         	PrVersion = parseFloat(BPBVersion);
+         }
+         return PrVersion;
+}
+
+function CheckPrVrsion(){
+	var PrVersion = GetPrVrsion();
+
+
+        var NewWordVer = {
+        		"vlessOverWSHandler":"vOWSHandler"
+
+        };
+        for (var OldWord in NewWordVer) {
+    		if(SrcCode.value.search(NewWordVer[OldWord]) > 1){
+    			document.getElementById("_"+OldWord).value = NewWordVer[OldWord];
+    		}else{
+    			document.getElementById("_"+OldWord).value = OldWord;
+    		}
+	    }
+  	alert("✔️ Project v"+PrVersion+" Loaded.");
+}
+
+function GetPrCode(theUrl){
+    var xmlHttp = null;
+
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+function SetPrCode(CodeLink){
+       if(!CodeLink){return false;}
+  	   var  Code = GetPrCode(CodeLink);
+  	   SrcCode.value = Code;
+       CheckPrVrsion();
+}
+    </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXH7KG85RT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXH7KG85RT');
+</script>
+    </body>
+    </html>

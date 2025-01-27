@@ -637,10 +637,6 @@ async function AdvancedConfig() {
   <input type="hidden" id="subscription" value="https://${hostName}/${AccessSubscription}#${CnfgName}">
   </div>
 
-  <div class="help">
-    <center><a href="https://github.com/liMilCo/Free-Internet"><img src="https://github.githubassets.com/favicons/favicon.png" style="vertical-align: middle;" /> Free Internet  🐉</a></center>
-  </div>
-
   </div>
 
   <div id="qrcode-container" onclick="closeQR()"></div>

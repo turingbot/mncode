@@ -528,8 +528,30 @@ async function AdvancedConfig() {
   <head>
       <meta charset="UTF-8">
       <title>Advanced Config Generator</title>
-      <style>:root{--color:black;--primary-color:#09639f;--background-color:#fff;--container-background-color:#f9f9f9;--text-color:#333;--border-color:#ddd}body,html{height:100%;margin:0}body{font-family:system-ui;background-color:var(--background-color);color:var(--text-color);display:flex;justify-content:center;align-items:center}.container{background:var(--container-background-color);padding:20px;border:1px solid var(--border-color);border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,.1);width:90%;max-width:80%}.line,button{padding:10px}.line,textarea{border-radius:5px}h1{color:var(--primary-color);margin-bottom:20px}.line{margin:15px 0;background-color:#e9e9e9;font-family:monospace;font-size:1rem;word-wrap:break-word}.help{font-size:.8rem}#pxip{width:23rem}textarea{margin:10px 0;width:98%;height:3rem}button{margin-top:15px;font-size:16px;font-weight:600;border:none;border-radius:5px;color:#fff;background-color:var(--primary-color);cursor:pointer;transition:background-color .3s}button:hover{background-color:#2980b9}
-      #qrcode-container {display: none;position: fixed;z-index: 1;left: 65vmin;top: 25vmin;padding: 5px;border-radius: 5px;border: 1px solid var(--border-color);overflow: auto;background-color: #FFF;}
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        :root{--color:black;--primary-color:#09639f;--background-color:#fff;--container-background-color:#f9f9f9;--line-background-color:#f2f2f2;--text-color:#333;--border-color:#ddd}
+        body,html{height:100%;margin:0}
+        body{font-family:system-ui;background-color:var(--background-color);color:var(--text-color);display:flex;justify-content:center;align-items:start;}
+        body.dark-mode{--color: white;--primary-color: #09639F;--background-color: #121212;--line-background-color: #252525;--container-background-color: #121212;--text-color: #DFDFDF;--border-color: #353535;}
+        .container{background:var(--container-background-color);padding:20px;border:1px solid var(--border-color);border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,.1);width:90%;max-width:80%;margin: 10px 0;}
+        .line,button{padding:10px}
+        .line,textarea{border-radius:5px}
+        h1,a{color:var(--primary-color);}
+
+        .line{margin:15px 0;background-color:var(--line-background-color);font-family:monospace;font-size:1rem;word-wrap:break-word;line-height: 1.7rem;}
+        .help{font-size:.8rem}
+        textarea{margin:10px 0;width:98%;height:3.5rem}
+        button{margin-top:15px;font-size:16px;font-weight:600;border:none;border-radius:5px;color:#fff;background-color:var(--primary-color);cursor:pointer;transition:background-color .3s}
+        button:hover{background-color:#2980b9}
+				label{display: inline-block;}
+				#qrcode-container {display: none;place-content: space-around center;align-items: center;position: fixed;z-index: 1;width: 100%;height: 100%;background-color:#000000cc;}
+				.qrcode{padding: 5px;border-radius: 5px;border: 1px solid var(--border-color);overflow: auto;}				h1,h2,h3{margin: 0;}
+				input,select,textarea{padding:2px 5px;border:1px solid var(--border-color);border-radius:5px;font-size:14px;color:var(--text-color);background-color:var(--background-color);box-sizing:border-box;transition:border-color .5s}
+				input[disabled]{background-color: var(--line-background-color);color: var(--background-color);border: 1px dashed var(--background-color);}
+				.floating-button {position: fixed;bottom: 20px;left: 20px;background-color: var(--color);color:  #888;border: none;border-radius: 50%;width: 60px;height: 60px;font-size: 24px;cursor: pointer;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);transition: background-color 0.3s, transform 0.3s;}
+        .floating-button:hover{transform:scale(1.1);}
+        body.dark-mode .floating-button{background-color:var(--color);}
       </style>
   </head>
   <body>
@@ -614,8 +636,15 @@ async function AdvancedConfig() {
   <span id="subscriptionshow">https://${hostName}/${AccessSubscription}#${CnfgName}</span>
   <input type="hidden" id="subscription" value="https://${hostName}/${AccessSubscription}#${CnfgName}">
   </div>
+
+  <div class="help">
+    <center><a href="https://github.com/liMilCo/Free-Internet"><img src="https://github.githubassets.com/favicons/favicon.png" style="vertical-align: middle;" /> Free Internet  🐉</a></center>
   </div>
+
+  </div>
+
   <div id="qrcode-container" onclick="closeQR()"></div>
+  <button id="darkModeToggle" class="floating-button">🌎</button>
   <script>
   let defalt_address = "${hostName}";
   let defalt_pxip = "${prIP}";
@@ -627,7 +656,7 @@ async function AdvancedConfig() {
   const fpathss = "${fpaths}"; //*** 3.3.1 
   const fpath = fpathss.split(',');              //*** 3.3.1   
   const subpath = 'https://'+defalt_address+'/'+defalt_AcsSub+'#'+defalt_CnfgName; 
-
+  localStorage.getItem('darkMode') === 'enabled' && document.body.classList.add('dark-mode'); 
 var address = document.getElementById("address");
 var custom = document.getElementById("custom");
 var host = document.getElementById("host");
@@ -636,13 +665,18 @@ var pxip = document.getElementById("pxip");
 var port = document.getElementById("port");
 var fingerprint = document.getElementById("fingerprint");
 var config = document.getElementById("config");
-
+const darkModeToggle = document.getElementById('darkModeToggle'); 
 function load_defalt(){
 	address.value = defalt_address;
 	host.value = defalt_address;
 	sni.value = defalt_address;
 	pxip.value = defalt_pxip;
 	GetIPs();
+	darkModeToggle.addEventListener('click', () => {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+		darkModeToggle.innerHTML = (isDarkMode ? '\u{1F31E}' : '\u{1F319}');
+  });
 }
 function cstm(){
     if(custom.checked){
@@ -685,9 +719,9 @@ function generate(){
     if(fingerprint.value != 0){
     	cfingerprint =  "&fp="+fingerprint.value;
     }
-    if (pxip.value && pxip.value !== defalt_pxip){                                                 //*** 3.3.1
+    if (pxip.value && pxip.value !== defalt_pxip){                                               
         var pxipath = (btoa(pxip.value.replace(/ /g, ''))).replace(/=/g, '%3D');
-    	cpath = fpath[Math.floor(Math.random() * fpath.length)]+"%2F"+pxipath+"%2F";
+    	cpath = fpath[Math.floor(Math.random() * fpath.length)]+"%2F"+pxipath+"%2F%3Fed%3D2048";
 
         SetSub('https://'+defalt_address+'/'+defalt_AcsSub+'?path='+pxipath+'#'+defalt_CnfgName);      
     }else{
@@ -712,10 +746,9 @@ config.value = atob("dmxlc3M=")+"://"+defalt_perid+"@"+caddress+":"+cport+"?encr
             if(!url){return;}
             let qrcodeContainer = document.getElementById("qrcode-container");
             qrcodeContainer.innerHTML = "";
-            qrcodeContainer.style.display = "block";
+            qrcodeContainer.style.display = "flex";
             let qrcodeDiv = document.createElement("div");
             qrcodeDiv.className = "qrcode";
-            qrcodeDiv.style.padding = "2px";
             qrcodeDiv.style.backgroundColor = "#ffffff";
             new QRCode(qrcodeDiv, {
                 text: url,
@@ -739,7 +772,7 @@ config.value = atob("dmxlc3M=")+"://"+defalt_perid+"@"+caddress+":"+cport+"?encr
     const cfIP = await cfIPresponse.text();
     const cfResponse = await fetch('https://ipwho.is/?ip=' + cfIP + '&nocache=' + Date.now(), { cache: "no-store" });
     const cfResponseObj = await cfResponse.json();
-    var ipdatacf = cfResponseObj.ip + '  <b>'+cfResponseObj.country+' ('+cfResponseObj.country_code+') </b>';
+    var ipdatacf = cfIP + '  <b>'+cfResponseObj.country+' ('+cfResponseObj.country_code+') </b>';
     document.getElementById('clipdata').innerHTML = ipdatacf; //parse
 
   }
@@ -767,17 +800,17 @@ async function getVVConfig() {
 	const dfltIcns = ["%E2%9D%A4%EF%B8%8F", "%F0%9F%92%99", "%F0%9F%92%9D", "%F0%9F%92%98", "%F0%9F%92%95", "%F0%9F%96%A4", "%F0%9F%92%93", "%F0%9F%92%97", "%F0%9F%92%96"];
 	const dfltFp = ["chrome", "firefox", "android", "edge"];
   const fpath = fpaths.split(',');              //*** 3.3.1 
-  var pathForSub = "";
+  var pathForSub = "%3Fed%3D2048";
   if(GetPath){
   	  GetPath = GetPath.replace(/=/g, '%3D');
-  					pathForSub = fpath[Math.floor(Math.random() * fpath.length)]+"%2F"+GetPath;
+  					pathForSub = fpath[Math.floor(Math.random() * fpath.length)]+"%2F"+GetPath+"%2F%3Fed%3D2048";
   }
 
 	var CnfgCntr = 1;
 	var vVvMain =
 	`${protocol}` +
 	`://${userID}@${hostName}:443`+
-	`?encryption=none&security=tls&fp=chrome&alpn=h2%2Chttp%2F1.1&type=ws&path=%2F${pathForSub}#${CnfgCntr}%20-%20%F0%9F%90%89%20${CnfgName}\n`;
+	`?encryption=none&security=tls&sni=${hostName}&fp=chrome&alpn=h2%2Chttp%2F1.1&type=ws&host=${hostName}&path=%2F${pathForSub}#${CnfgCntr}%20-%20%F0%9F%90%89%20${CnfgName}\n`;
 
   for (var thisIP of getDomainIPs.ipv4) {
   	    CnfgCntr++;
@@ -786,7 +819,7 @@ async function getVVConfig() {
         const thisIcn = dfltIcns[Math.floor(Math.random() * dfltIcns.length)];
         const thisFp = dfltFp[Math.floor(Math.random() * dfltFp.length)]; 
         if(GetPath){
-  					pathForSub = fpath[Math.floor(Math.random() * fpath.length)]+"%2F"+GetPath;
+  					pathForSub = fpath[Math.floor(Math.random() * fpath.length)]+"%2F"+GetPath+"%2F%3Fed%3D2048";
   			}
 
     	vVvMain +=

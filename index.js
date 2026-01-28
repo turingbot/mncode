@@ -5,7 +5,7 @@ var ThisVersion = "3.3.3";
 var userID = "4645527f-7ef9-4622-a18c-e4b2ec3f3b33";
 var AccessSubscription = "_AccessSubscription_";
 
-var prIP = atob('Y2lwLnRyb25iYW5rLnNpdGU=');
+var prIP = atob('MTguMTkzLjEzMS4yNg==');
 
 var pathName;
 var hostName;
@@ -510,7 +510,7 @@ async function resolveDNS(domain) {
 }
 
 async function AdvancedConfig() {
-  const pxipdomain = atob('Y2lwLnRyb25iYW5rLnNpdGU=');
+  const pxipdomain = atob('MTguMTkzLjEzMS4yNg==');
   const dnsdomain = await resolveDNS(hostName);
   const CnfgName = hostName.split('.')[0];
   var addresslist = "<datalist id='addresslist'><option value='"+hostName+"'><option value='www.speedtest.net'>";
